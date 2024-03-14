@@ -3,7 +3,7 @@ import { GameCard } from "./GameCard";
 import axios from "axios";
 
 export const GameList = () => {
-  const [cards, setCards] = useState();
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -19,7 +19,9 @@ export const GameList = () => {
 
   return (
     <div className="games-grid">
-      <GameCard />
+      {cards.map((card) => {
+        return <GameCard key={card.id} card={card} />;
+      })}
     </div>
   );
 };
