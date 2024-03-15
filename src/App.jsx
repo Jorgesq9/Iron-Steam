@@ -11,11 +11,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
-        <Route path="gameDetails" element={<GameDetailsPage />} />
+        <Route path="gameDetails/:cardId" element={<GameDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
 }
-
 export default App;
