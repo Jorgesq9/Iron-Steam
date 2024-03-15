@@ -1,0 +1,67 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #e0e0e0;
+  background-color: #121212;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header,
+.footer {
+  background: #1f1b24;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* .button {
+  display: inline-block;
+  background: #6200ee;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+} */
+
+/* .button:hover {
+  background: #3700b3; 
+} */
+
+.card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+*/ .card h3 {
+  margin-bottom: 15px;
+}
+
+/* Misc */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #e0e0e0;
+}
+
+p {
+  margin-bottom: 10px;
+}
