@@ -1,0 +1,8 @@
+.edit-button {
+  border: 1px solid black;
+  border-radius: 10%;
+  margin: 1em 0em;
+  padding: 0.2em 0.5em;
+  width: 2%;
+  background-color: rgb(85, 164, 7);
+}

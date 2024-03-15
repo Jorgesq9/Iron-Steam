@@ -1,2 +1,4 @@
 .game-details-page {
+  display: flex;
+  flex-direction: column;
 }
