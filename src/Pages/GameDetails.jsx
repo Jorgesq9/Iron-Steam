@@ -1,3 +1,5 @@
+import "./GameDetails.css";
+
 export const GameDetailsPage = () => {
-  return <div>GameDetailsPage</div>;
+  return <div className="game-details-page">GameDetailsPage</div>;
 };
