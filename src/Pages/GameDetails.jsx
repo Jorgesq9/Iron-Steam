@@ -1,12 +1,11 @@
 import { EditButton } from "../components/EditButton";
 import "./GameDetails.css";
 import { useEffect, useState } from "react";
-import axios from 'axios'
+import axios from "axios";
 import { useParams } from "react-router";
 
 export const GameDetailsPage = () => {
-
-  const { id } = useParams()
+  const { id } = useParams();
 
   const [gameDetails, setGameDetails] = useState(null);
 
@@ -22,31 +21,23 @@ export const GameDetailsPage = () => {
     getData();
   }, [id]);
 
-
-  return(
-     <h1 className="game-details-page">GameDetailsPage
-          <EditButton />
-          <div>
-
-          <ul>
-
-       
-           {gameDetails && (
-           <div className="game-card">
-          <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
-          <h3>{gameDetails.gameName}</h3>
-          <h4>{gameDetails.devName}</h4>
-          <p>{gameDetails.description}</p>
-          <p>{gameDetails.price}€</p>
-        </div>
-      )}
-
-          </ul>
-
-          </div>
-     
-     </h1>
-  
-     )
-  
+  return (
+    <h1 className="game-details-page">
+      GameDetailsPage
+      <EditButton />
+      <div>
+        <ul>
+          {gameDetails && (
+            <div className="game-card">
+              <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
+              <h3>{gameDetails.gameName}</h3>
+              <h4>{gameDetails.devName}</h4>
+              <p>{gameDetails.description}</p>
+              <p>{gameDetails.price}€</p>
+            </div>
+          )}
+        </ul>
+      </div>
+    </h1>
+  );
 };
