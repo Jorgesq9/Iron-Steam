@@ -20,10 +20,15 @@ export const GameList = () => {
     getData();
   }, []);
 
+  const linkStyle = {
+    color: "white",
+    textDecoration: "none"
+  }
+  
   return (
     <div className="games-grid">
       {cards.map((card) => {
-    return <Link key={card.id} to={`gameDetails/${card.id}`} >
+    return <Link style={linkStyle} key={card.id} to={`gameDetails/${card.id}`} >
           <GameCard card={card} />
           </Link>
   })}

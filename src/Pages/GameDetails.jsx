@@ -21,23 +21,29 @@ export const GameDetailsPage = () => {
     getData();
   }, [id]);
 
-  return (
-    <h1 className="game-details-page">
-      GameDetailsPage
-      <EditButton />
-      <div>
-        <ul>
-          {gameDetails && (
-            <div className="game-card">
-              <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
-              <h3>{gameDetails.gameName}</h3>
-              <h4>{gameDetails.devName}</h4>
-              <p>{gameDetails.description}</p>
-              <p>{gameDetails.price}€</p>
-            </div>
-          )}
-        </ul>
-      </div>
-    </h1>
-  );
+
+  return(
+     <h1 className="game-details-page">GameDetailsPage
+          <EditButton />
+          <div>
+
+          <ul>
+           {gameDetails && (
+           <div className="game-card">
+          <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
+          <h3>{gameDetails.gameName}</h3>
+          <h4>{gameDetails.devName}</h4>
+          <p>{gameDetails.description}</p>
+          <p>{gameDetails.price}€</p>
+        </div>
+      )}
+
+          </ul>
+
+          </div>
+     
+     </h1>
+  
+     )
+  
 };
