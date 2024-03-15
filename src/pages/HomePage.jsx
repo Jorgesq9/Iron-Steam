@@ -22,7 +22,7 @@ export const HomePage = () => {
 
   return (
     <div className="home-page">
-      <AddGameForm />
+      <AddGameForm cards={cards} />
       <EditModal />
 
       <div>Random Game Spotlight/Carousel?</div>
