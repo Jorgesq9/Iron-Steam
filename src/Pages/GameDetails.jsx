@@ -2,22 +2,25 @@ import { EditButton } from "../components/EditButton";
 import "./GameDetails.css";
 import { useEffect, useState } from "react";
 import axios from 'axios'
+import { useParams } from "react-router";
 
 export const GameDetailsPage = () => {
 
-  const [cards, setCards] = useState([]);
+  const { id } = useParams()
+
+  const [gameDetails, setGameDetails] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/games");
-        setCards(response.data);
+        const response = await axios.get(`http://localhost:5001/games/${id}`);
+        setGameDetails(response.data);
       } catch (err) {
         console.log(err);
       }
     };
     getData();
-  }, []);
+  }, [id]);
 
 
   return(
@@ -27,17 +30,16 @@ export const GameDetailsPage = () => {
 
           <ul>
 
-          {cards.map((card) => {
-            return (
-                 <div className="game-card">
-                 <img src={card.screenshots[0]} />
-                 <h3>{card.gameName}</h3>
-                 <h4>{card.devName}</h4>
-                 <p>{card.description}</p>
-                 <p>{card.price}€</p>
-              </div>
-            )
-          })}
+       
+           {gameDetails && (
+           <div className="game-card">
+          <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
+          <h3>{gameDetails.gameName}</h3>
+          <h4>{gameDetails.devName}</h4>
+          <p>{gameDetails.description}</p>
+          <p>{gameDetails.price}€</p>
+        </div>
+      )}
 
           </ul>
 
@@ -46,10 +48,5 @@ export const GameDetailsPage = () => {
      </h1>
   
      )
-  return (
-    <div className="game-details-page">
-      GameDetailsPage
-      <EditButton />
-    </div>
-  );
+  
 };
