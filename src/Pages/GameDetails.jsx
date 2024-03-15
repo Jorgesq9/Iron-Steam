@@ -23,7 +23,7 @@ export const GameDetailsPage = () => {
 
 
   return(
-     <h1 className="game-details-page">GameDetailsPage
+     <div className="game-details-page">GameDetailsPage
           <EditButton />
           <div>
 
@@ -31,10 +31,17 @@ export const GameDetailsPage = () => {
            {gameDetails && (
            <div className="game-card">
           <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
-          <h3>{gameDetails.gameName}</h3>
-          <h4>{gameDetails.devName}</h4>
+          <h1>{gameDetails.gameName}</h1>
+          <h3>{gameDetails.devName}</h3>
           <p>{gameDetails.description}</p>
           <p>{gameDetails.price}€</p>
+          {gameDetails.linkToGame && (
+            <p> 
+              <a href={gameDetails.linkToGame} target="_blank" >
+                Play the Demo
+              </a>
+            </p>
+          )}
         </div>
       )}
 
@@ -42,7 +49,7 @@ export const GameDetailsPage = () => {
 
           </div>
      
-     </h1>
+     </div>
   
      )
   
