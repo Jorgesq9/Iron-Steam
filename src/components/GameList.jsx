@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { GameCard } from "./GameCard";
 import axios from "axios";
 import "./GameList.css";
+import {Link} from "react-router-dom"
 
 export const GameList = () => {
   const [cards, setCards] = useState([]);
@@ -21,8 +22,10 @@ export const GameList = () => {
   return (
     <div className="games-grid">
       {cards.map((card) => {
-        return <GameCard key={card.id} card={card} />;
-      })}
-    </div>
+    return <Link key={card.id} to={`gameDetails/${card.id}`} >
+          <GameCard card={card} />
+          </Link>
+  })}
+</div>
   );
 };
