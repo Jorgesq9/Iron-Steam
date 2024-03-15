@@ -17,16 +17,18 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-.nav-Bar{
-  display: flex;;
-  justify-content:center;
+
+.nav-Bar {
+  display: flex;
+  justify-content: center;
 }
-.mainLogo{
+
+.mainLogo {
   width: auto;
   height: 200px;
 }
 
-.logo-container{
+.logo-container {
   display: flex;
   align-items: center;
 }

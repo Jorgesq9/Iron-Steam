@@ -6,8 +6,7 @@ export const HomePage = () => {
   return (
     <div className="home-page">
       <EditModal />
-      
-      <h1>Home Page</h1>
+
       <div>Random Game Spotlight/Carousel?</div>
       <GameList />
     </div>
