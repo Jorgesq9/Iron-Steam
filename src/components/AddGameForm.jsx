@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./AddGameForm.css";
 import axios from "axios";
 
-export const AddGameForm = ({ cards }) => {
+export const AddGameForm = () => {
   const [inputValue, setInputValue] = useState({
     gameName: "",
     devName: "",
