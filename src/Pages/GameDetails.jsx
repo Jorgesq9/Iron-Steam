@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 
 export const GameDetailsPage = () => {
-<<<<<<< HEAD
 
   const [cards, setCards] = useState([]);
 
@@ -23,7 +22,7 @@ export const GameDetailsPage = () => {
 
   return(
      <h1 className="game-details-page">GameDetailsPage
-     
+          <EditButton />
           <div>
 
           <ul>
@@ -47,12 +46,10 @@ export const GameDetailsPage = () => {
      </h1>
   
      )
-=======
   return (
     <div className="game-details-page">
       GameDetailsPage
       <EditButton />
     </div>
   );
->>>>>>> editButton
 };
