@@ -21,6 +21,7 @@ export const GameDetailsPage = () => {
     getData();
   }, [id]);
 
+<<<<<<< HEAD
 
   return(
      <h1 className="game-details-page">GameDetailsPage
@@ -46,4 +47,29 @@ export const GameDetailsPage = () => {
   
      )
   
+=======
+  return (
+    <h1 className="game-details-page">
+      GameDetailsPage
+      <EditButton />
+      <div>
+        <ul>
+          {gameDetails && (
+            <div className="game-card">
+              {!gameDetails.screenshots ? (
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzLQaAF5IVPMoaT-ftbnmXpKWNmmaXUtcHBw&usqp=CAU" />
+              ) : (
+                <img src={gameDetails.screenshots[0]} />
+              )}
+              <h3>{gameDetails.gameName}</h3>
+              <h4>{gameDetails.devName}</h4>
+              <p>{gameDetails.description}</p>
+              <p>{gameDetails.price}€</p>
+            </div>
+          )}
+        </ul>
+      </div>
+    </h1>
+  );
+>>>>>>> editButton
 };
