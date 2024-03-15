@@ -43,7 +43,7 @@ export const AddGameForm = () => {
         linkToGame: "",
       });
     } catch (err) {
-      console.log(er);
+      console.log(err);
     }
   };
 
