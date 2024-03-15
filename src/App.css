@@ -26,20 +26,16 @@ body {
   text-align: center;
 }
 
-/* .button {
-  display: inline-block;
-  background: #6200ee;
+.button {
+  background: rgb(85, 164, 7);
   color: #ffffff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
-} */
+}
 
-/* .button:hover {
-  background: #3700b3; 
-} */
+.button:hover {
+  background: rgb(73, 141, 5);
+}
 
 .card {
   background: #1e1e1e;
