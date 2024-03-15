@@ -1,4 +1,18 @@
 .add-form {
-  background-color: burlywood;
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+  height: 30em;
+  padding: 1em;
+  max-width: 50%;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 0.3em 0;
 }

@@ -7,6 +7,9 @@ import "./HomePage.css";
 
 export const HomePage = () => {
   const [cards, setCards] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   useEffect(() => {
     const getData = async () => {
@@ -22,10 +25,11 @@ export const HomePage = () => {
 
   return (
     <div className="home-page">
-      <AddGameForm />
-      <EditModal />
-
-      <div>Random Game Spotlight/Carousel?</div>
+      <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} />
+      <button className="button modal-button" onClick={toggleModal}>
+        <h1>Add Game</h1>
+      </button>
+      {/* <div>Random Game Spotlight/Carousel?</div> */}
       <GameList cards={cards} />
     </div>
   );

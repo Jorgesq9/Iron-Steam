@@ -12,11 +12,6 @@ body {
   line-height: 1.6;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
 .nav-Bar {
   display: flex;
   justify-content: center;
@@ -94,4 +89,40 @@ h6 {
 
 p {
   margin-bottom: 10px;
+}
+
+.modal-button {
+  position: fixed;
+  right: 0;
+  padding: 2em 3em;
+  border-radius: 12px 0px 0px 12px;
+}
+
+.modal-button:hover {
+  background-color: rgb(5, 153, 15);
+}
+
+.modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); /
+}
+
+.modal-content {
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  width: 40%; 
 }
