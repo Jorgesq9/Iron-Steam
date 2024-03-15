@@ -20,22 +20,31 @@ export const AddGameForm = () => {
     }));
   };
 
-  const submitFormHandler = (e) => {
+  const submitFormHandler = async (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:5001/games", inputValue)
-      .then((response) => {
-        console.log(response.data);
-        setInputValue({
-          gameName: "",
-          devName: "",
-          description: "",
-          price: "",
-          category: "",
-          linkToGame: "",
-        });
-      })
-      .catch((err) => console.log("Error adding a game!", err));
+    try {
+      const response = await axios.get("http://localhost:5001/games");
+      const games = response.data;
+      const highestId = games.reduce((max, game) => Math.max(max, game.id), 0);
+
+      const newGameResponse = await axios.post("http://localhost:5001/games", {
+        ...inputValue,
+        id: highestId + 1,
+      });
+
+      console.log(newGameResponse.data);
+
+      setInputValue({
+        gameName: "",
+        devName: "",
+        description: "",
+        price: "",
+        category: "",
+        linkToGame: "",
+      });
+    } catch (err) {
+      console.log(er);
+    }
   };
 
   return (
