@@ -1,5 +1,4 @@
 import { AddGameForm } from "../components/AddGameForm";
-import { EditModal } from "../components/EditModal";
 import { GameList } from "../components/GameList";
 import { useEffect, useState } from "react";
 import { Searchbar } from "../components/Searchbar";
