@@ -1,0 +1,17 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.7em;
+  background-color: darkgray;
+  width: 60%;
+  align-self: center;
+}
+
+button {
+  padding: 0.6em;
+}
+
+input {
+  padding: 0.5em;
+  width: 100%;
+}

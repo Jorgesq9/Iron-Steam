@@ -1,12 +1,13 @@
 import { AddGameForm } from "../components/AddGameForm";
-import { EditModal } from "../components/EditModal";
 import { GameList } from "../components/GameList";
 import { useEffect, useState } from "react";
+import { Searchbar } from "../components/Searchbar";
 import axios from "axios";
 import "./HomePage.css";
 
 export const HomePage = ({ toggleModal, isModalOpen }) => {
   const [cards, setCards] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -20,15 +21,22 @@ export const HomePage = ({ toggleModal, isModalOpen }) => {
     getData();
   }, []);
 
+  const filteredCards = cards.filter((card) =>
+    card.gameName.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="home-page">
       <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} />
+
       <button className="button modal-button" onClick={toggleModal}>
         <h1>Add Game</h1>
       </button>
-      {/* <div>Random Game Spotlight/Carousel?</div> */}
+
+      <Searchbar search={search} setSearch={setSearch} />
+
       <GameList
-        cards={cards}
+        cards={filteredCards}
         toggleModal={toggleModal}
         isModalOpen={isModalOpen}
       />
