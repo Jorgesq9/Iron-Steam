@@ -7,7 +7,6 @@ import { HomePage } from "./pages/HomePage";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { useState } from "react";
-import { Searchbar } from "./components/Searchbar";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Searchbar />
+
       <Routes>
         <Route
           path="/"

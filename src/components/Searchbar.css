@@ -1,9 +1,10 @@
 .search-bar {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   padding: 0.7em;
   background-color: darkgray;
+  width: 60%;
+  align-self: center;
 }
 
 button {
@@ -12,5 +13,5 @@ button {
 
 input {
   padding: 0.5em;
-  width: 30%;
+  width: 100%;
 }

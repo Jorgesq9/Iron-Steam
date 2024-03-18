@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./Searchbar.css";
 
-export const Searchbar = () => {
-  const [search, setSearch] = useState("");
-
+export const Searchbar = ({ search, setSearch }) => {
   const changeHandler = (e) => {
     e.preventDefault();
 
@@ -13,7 +10,7 @@ export const Searchbar = () => {
   return (
     <div className="search-bar">
       <button className="button">Search</button>
-      <input onChange={changeHandler}></input>
+      <input onChange={changeHandler} value={search}></input>
     </div>
   );
 };
