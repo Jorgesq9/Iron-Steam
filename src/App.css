@@ -49,10 +49,12 @@ body {
 }
 .header,
 .footer {
-  background: #1f1b24;
+  display: flex;
+  justify-content: center;
   color: #ffffff;
   padding: 20px 0;
   text-align: center;
+  
 }
 
 .button {

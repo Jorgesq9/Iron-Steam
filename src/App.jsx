@@ -36,7 +36,9 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
+      <div className="footer">
       <Footer />
+      </div>
     </>
   );
 }
