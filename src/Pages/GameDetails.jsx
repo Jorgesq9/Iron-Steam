@@ -3,6 +3,8 @@ import "./GameDetails.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 export const GameDetailsPage = () => {
   const { id } = useParams();
@@ -20,6 +22,21 @@ export const GameDetailsPage = () => {
     };
     getData();
   }, [id]);
+
+  const handleDelete = async (gameId) => {
+    try {
+      const confirmDelete = window.confirm("Are you sure you want to delete the game?")
+
+      if(confirmDelete) {
+      await axios.delete (`http://localhost:5001/games/${id}`)
+      setGameDetails(null)
+      toast.success("Game Deleted")
+      window.location.reload()
+      }
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
 
   return(
@@ -42,6 +59,8 @@ export const GameDetailsPage = () => {
               </a>
             </p>
           )}
+
+          <button onClick={handleDelete}>Delete</button>
         </div>
       )}
 
