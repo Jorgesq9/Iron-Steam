@@ -1,14 +1,37 @@
+import { AddGameForm } from "../components/AddGameForm";
+import { EditModal } from "../components/EditModal";
 import { GameList } from "../components/GameList";
-import { Navbar } from "../components/Navbar";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./HomePage.css";
 
-export const HomePage = () => {
+export const HomePage = ({ toggleModal, isModalOpen }) => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5001/games");
+        setCards(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <div className="home-page">
-      <Navbar />
-      <h1>Home Page</h1>
-      <div>Random Game Spotlight/Carousel?</div>
-      <GameList />
+      <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} />
+      <button className="button modal-button" onClick={toggleModal}>
+        <h1>Add Game</h1>
+      </button>
+      {/* <div>Random Game Spotlight/Carousel?</div> */}
+      <GameList
+        cards={cards}
+        toggleModal={toggleModal}
+        isModalOpen={isModalOpen}
+      />
     </div>
   );
 };

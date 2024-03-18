@@ -1,0 +1,9 @@
+.game-details-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
+  width: auto;
+  height: 500px;
+}
