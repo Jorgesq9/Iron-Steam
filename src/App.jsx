@@ -4,19 +4,34 @@ import { AboutPage } from "./pages/AboutPage";
 import { GameDetailsPage } from "./pages/GameDetails";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { HomePage } from "./pages/HomePage";
-import { Navbar } from "./components/Navbar"
-import { Footer } from "./components/Footer" 
-
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
   return (
     <>
-    
-    <Navbar />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <HomePage toggleModal={toggleModal} isModalOpen={isModalOpen} />
+          }
+        />
         <Route path="about" element={<AboutPage />} />
-        <Route path="gameDetails/:id" element={<GameDetailsPage />} />
+        <Route
+          path="gameDetails/:id"
+          element={
+            <GameDetailsPage
+              toggleModal={toggleModal}
+              isModalOpen={isModalOpen}
+            />
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

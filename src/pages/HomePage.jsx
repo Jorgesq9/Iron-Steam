@@ -5,11 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./HomePage.css";
 
-export const HomePage = () => {
+export const HomePage = ({ toggleModal, isModalOpen }) => {
   const [cards, setCards] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   useEffect(() => {
     const getData = async () => {
@@ -30,7 +27,11 @@ export const HomePage = () => {
         <h1>Add Game</h1>
       </button>
       {/* <div>Random Game Spotlight/Carousel?</div> */}
-      <GameList cards={cards} />
+      <GameList
+        cards={cards}
+        toggleModal={toggleModal}
+        isModalOpen={isModalOpen}
+      />
     </div>
   );
 };
