@@ -10,6 +10,7 @@ export const AddGameForm = ({ isModalOpen, toggleModal }) => {
     price: "",
     category: "",
     linkToGame: "",
+    screenshots:"",
   });
 
   const inputHandler = (e) => {
@@ -25,6 +26,7 @@ export const AddGameForm = ({ isModalOpen, toggleModal }) => {
     try {
       const response = await axios.get("http://localhost:5001/games");
       const games = response.data;
+      console.log(response.data)
       const highestId = games.reduce((max, game) => Math.max(max, game.id), 0);
 
       const newGameResponse = await axios.post("http://localhost:5001/games", {
@@ -41,7 +43,9 @@ export const AddGameForm = ({ isModalOpen, toggleModal }) => {
         price: "",
         category: "",
         linkToGame: "",
+        screenshots:"",
       });
+      window.location.reload()
     } catch (err) {
       console.log(err);
     }
@@ -102,10 +106,17 @@ export const AddGameForm = ({ isModalOpen, toggleModal }) => {
               value={inputValue.linkToGame}
               onChange={inputHandler}
             ></input>
-
+            <input
+              type="text"
+              name="screenshots"
+              placeholder="Url to a image"
+              value={inputValue.screenshots}
+              onChange={inputHandler}
+            ></input>
             <button type="submit" className="button">
               Submit
             </button>
+            
           </form>
           <button onClick={toggleModal} className="button">
             Close
@@ -113,5 +124,6 @@ export const AddGameForm = ({ isModalOpen, toggleModal }) => {
         </div>
       </div>
     </div>
+    
   );
 };

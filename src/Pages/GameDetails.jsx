@@ -47,7 +47,7 @@ export const GameDetailsPage = () => {
           <ul>
            {gameDetails && (
            <div className="game-card">
-          <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
+          <img src={gameDetails.screenshots} alt="Game Screenshot" />
           <h1>{gameDetails.gameName}</h1>
           <h3>{gameDetails.devName}</h3>
           <p>{gameDetails.description}</p>
