@@ -41,7 +41,7 @@ export const GameDetailsPage = ({ toggleModal, isModalOpen }) => {
 
   return(
      <div className="game-details-page">GameDetailsPage
-          <EditButton />
+           <EditGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} />
           <div>
 
           <ul>
@@ -61,7 +61,11 @@ export const GameDetailsPage = ({ toggleModal, isModalOpen }) => {
           )}
 
           <button onClick={handleDelete}>Delete</button>
+          <button className="button" onClick={toggleModal}>
+                <h1>Edit game</h1>
+              </button>
         </div>
+        
       )}
 
           </ul>
@@ -71,33 +75,6 @@ export const GameDetailsPage = ({ toggleModal, isModalOpen }) => {
      </div>
   
      )
+    };
   
-  return (
-    <div className="game-details-page">
-      <EditGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} />
-      <div>
-        <ul>
-          {gameDetails && (
-            <div className="game-card">
-              <img src={gameDetails.screenshots[0]} alt="Game Screenshot" />
-              <h1>{gameDetails.gameName}</h1>
-              <h3>{gameDetails.devName}</h3>
-              <p>{gameDetails.description}</p>
-              <p>{gameDetails.price}€</p>
-              {gameDetails.linkToGame && (
-                <p>
-                  <a href={gameDetails.linkToGame} target="_blank">
-                    Play the Demo
-                  </a>
-                </p>
-              )}
-              <button className="button" onClick={toggleModal}>
-                <h1>Edit game</h1>
-              </button>
-            </div>
-          )}
-        </ul>
-      </div>
-    </div>
-  );
-};
+
