@@ -43,7 +43,7 @@
 .pcScreen {
   display: flex;
   position: relative;
-  top: -120px;
+  top: -110px;
   content: icon;
   width: 600px;
   height: auto;
@@ -73,7 +73,7 @@
 .comunity {
   display: flex;
   position: relative;
-  top: -180px;
+  top: -110px;
   content: icon;
   width: 600px;
   height: auto;
@@ -102,7 +102,7 @@
 .release {
   display: flex;
   position: relative;
-  top: -180px;
+  top: -110px;
   content: icon;
   width: 600px;
   height: auto;
