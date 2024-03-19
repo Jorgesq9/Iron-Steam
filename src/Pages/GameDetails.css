@@ -5,9 +5,9 @@
 }
 
 img {
-  width: auto;
-  height: 500px;
-  align-self: start;
+  /* width: auto;
+  height: 500px; */
+  /* align-self: start; */
 }
 
 .text {
@@ -20,8 +20,14 @@ img {
   justify-content: space-around;
 }
 
+.entire-card {
+  display: flex;
+}
+
 .card-title {
 }
 
-.card-info {
+.card-body {
+  padding-top: 3em;
+  padding-left: 1em;
 }
