@@ -20,7 +20,7 @@ export const HomePage = ({
     const getData = async () => {
       setIsLoading(true);
       try {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        // await new Promise((resolve) => setTimeout(resolve, 2000));
         const response = await axios.get("http://localhost:5001/games");
         setCards(response.data);
       } catch (err) {
@@ -64,6 +64,8 @@ export const HomePage = ({
           cards={filteredCards}
           toggleModal={toggleModal}
           isModalOpen={isModalOpen}
+          isError={isError}
+          setIsError={setIsError}
         />
       )}
     </div>
