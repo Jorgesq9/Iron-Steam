@@ -3,7 +3,6 @@ import { GameList } from "../components/GameList";
 import { useEffect, useState } from "react";
 import { Searchbar } from "../components/Searchbar";
 import axios from "axios";
-import "./HomePage.css";
 
 export const HomePage = ({ toggleModal, isModalOpen }) => {
   const [cards, setCards] = useState([]);

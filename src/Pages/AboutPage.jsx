@@ -2,6 +2,8 @@ import pcScreen from "../assets/PcScreen.png";
 import comunity from "../assets/Comunity.png";
 import release from "../assets/Release.png";
 
+import "./AboutPage.css";
+
 export const AboutPage = () => {
   return (
     <>
