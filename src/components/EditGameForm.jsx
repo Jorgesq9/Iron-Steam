@@ -19,7 +19,6 @@ export const EditGameForm = ({ isModalOpen, toggleModal }) => {
     const getData = async () => {
       try {
         const response = await axios.get(`http://localhost:5001/games/${id}`);
-        console.log(response.data);
 
         setInputValue({
           gameName: response.data.gameName || "",
@@ -54,8 +53,7 @@ export const EditGameForm = ({ isModalOpen, toggleModal }) => {
           ...inputValue,
         }
       );
-
-      console.log(newGameResponse.data);
+      toggleModal();
     } catch (err) {
       console.log(err);
     }
