@@ -7,7 +7,7 @@ export const GameList = ({ cards }) => {
   return (
     <div className="games-grid">
       {cards.length === 0 ? (
-        <h1>No game with this name</h1>
+        <h1>No game with this name :(</h1>
       ) : (
         cards.map((card) => {
           return (
