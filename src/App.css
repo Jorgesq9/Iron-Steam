@@ -131,3 +131,8 @@ p {
   justify-content: center;
   width: 40%; 
 }
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+}

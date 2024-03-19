@@ -1,9 +1,27 @@
 .game-details-page {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.images {
+img {
   width: auto;
   height: 500px;
+  align-self: start;
+}
+
+.text {
+  align-self: start;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card-title {
+}
+
+.card-info {
 }

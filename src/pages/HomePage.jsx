@@ -27,13 +27,13 @@ export const HomePage = ({ toggleModal, isModalOpen }) => {
 
   return (
     <div className="home-page">
+      <Searchbar search={search} setSearch={setSearch} />
+
       <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} />
 
       <button className="button modal-button" onClick={toggleModal}>
         <h1>Add Game</h1>
       </button>
-
-      <Searchbar search={search} setSearch={setSearch} />
 
       <GameList
         cards={filteredCards}
