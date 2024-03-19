@@ -10,6 +10,7 @@ import { useState } from "react";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   return (
@@ -20,7 +21,12 @@ function App() {
         <Route
           path="/"
           element={
-            <HomePage toggleModal={toggleModal} isModalOpen={isModalOpen} />
+            <HomePage
+              toggleModal={toggleModal}
+              isModalOpen={isModalOpen}
+              setIsLoading={setIsLoading}
+              isLoading={isLoading}
+            />
           }
         />
         <Route path="about" element={<AboutPage />} />
@@ -30,6 +36,8 @@ function App() {
             <GameDetailsPage
               toggleModal={toggleModal}
               isModalOpen={isModalOpen}
+              setIsLoading={setIsLoading}
+              isLoading={isLoading}
             />
           }
         />
@@ -37,7 +45,7 @@ function App() {
       </Routes>
 
       <div className="footer">
-      <Footer />
+        <Footer />
       </div>
     </>
   );
