@@ -137,6 +137,7 @@ p {
   flex-direction: column;
 }
 
-.loading {
+.loading,
+.error-message {
   align-self: center;
 }

@@ -12,6 +12,7 @@ export const GameDetailsPage = ({
   isModalOpen,
   isLoading,
   setIsLoading,
+  isError,
 }) => {
   const { id } = useParams();
 
@@ -59,6 +60,11 @@ export const GameDetailsPage = ({
           aria-label="Loading Spinner"
           data-testid="loader"
         />
+      ) : isError ? (
+        <div className="error-message">
+          <h2>There was an error fetching the data from the backend...</h2>
+          <p>Pretty wack amirite?</p>
+        </div>
       ) : (
         gameDetails && (
           <div className="game-card">

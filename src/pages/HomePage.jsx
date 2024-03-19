@@ -10,6 +10,8 @@ export const HomePage = ({
   isModalOpen,
   setIsLoading,
   isLoading,
+  isError,
+  setIsError,
 }) => {
   const [cards, setCards] = useState([]);
   const [search, setSearch] = useState("");
@@ -22,6 +24,7 @@ export const HomePage = ({
         const response = await axios.get("http://localhost:5001/games");
         setCards(response.data);
       } catch (err) {
+        setIsError(true);
         console.log(err);
       }
       setIsLoading(false);
@@ -51,6 +54,11 @@ export const HomePage = ({
           aria-label="Loading Spinner"
           data-testid="loader"
         />
+      ) : isError ? (
+        <div className="error-message">
+          <h2>There was an error fetching the data from the backend...</h2>
+          <p>Pretty wack amirite?</p>
+        </div>
       ) : (
         <GameList
           cards={filteredCards}

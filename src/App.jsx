@@ -11,6 +11,7 @@ import { useState } from "react";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   return (
@@ -26,6 +27,8 @@ function App() {
               isModalOpen={isModalOpen}
               setIsLoading={setIsLoading}
               isLoading={isLoading}
+              setIsError={setIsError}
+              isError={isError}
             />
           }
         />
@@ -38,6 +41,8 @@ function App() {
               isModalOpen={isModalOpen}
               setIsLoading={setIsLoading}
               isLoading={isLoading}
+              setIsError={setIsError}
+              isError={isError}
             />
           }
         />
