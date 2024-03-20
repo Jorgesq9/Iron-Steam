@@ -7,6 +7,7 @@ import { HomePage } from "./pages/HomePage";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { useState } from "react";
+import validator from "validator";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
