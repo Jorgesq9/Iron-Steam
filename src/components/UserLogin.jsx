@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 
-
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
     export const UserLogin = ({setUserIsLogin}) =>{
     
     const [userName, setUserName] = useState("")
@@ -10,7 +10,7 @@ import axios from "axios";
     const [userData, setUserData] = useState(null)
 
    const fetchData = async () => {
-    const users = await axios.get("http://localhost:5001/users")
+    const users = await axios.get(`${API_URL}/users`)
     setUserData({users: users.data})
    }
 

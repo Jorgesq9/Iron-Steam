@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PacmanLoader from "react-spinners/PacmanLoader";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
 
 export const GameDetailsPage = ({
   toggleModal,
@@ -22,7 +23,7 @@ export const GameDetailsPage = ({
     const getData = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5001/games/${id}`);
+        const response = await axios.get(`${API_URL}/games/${id}`);
         setGameDetails(response.data);
       } catch (err) {
         console.log(err);
@@ -39,7 +40,7 @@ export const GameDetailsPage = ({
       );
 
       if (confirmDelete) {
-        await axios.delete(`http://localhost:5001/games/${id}`);
+        await axios.delete(`${API_URL}/games/${id}`);
         setGameDetails(null);
         toast.success("Game Deleted");
         window.location.reload();
