@@ -42,7 +42,7 @@ export const HomePage = ({ toggleModal, isModalOpen }) => {
       <Searchbar search={search} setSearch={setSearch} />
 
       {userIsLogin && (
-      <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} userIsLogin={userIsLogin} /> 
+      <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} userIsLogin={userIsLogin}  /> 
       )}
 
       
