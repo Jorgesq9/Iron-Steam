@@ -8,6 +8,7 @@ import axios from "axios";
 import "./HomePage.css"
 import PacmanLoader from "react-spinners/PacmanLoader";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
 export const HomePage = ({
   toggleModal,
   isModalOpen,
@@ -25,7 +26,7 @@ export const HomePage = ({
       setIsLoading(true);
       try {
         // await new Promise((resolve) => setTimeout(resolve, 2000));
-        const response = await axios.get("http://localhost:5001/games");
+        const response = await axios.get(`${API_URL}/games`);
         setCards(response.data);
       } catch (err) {
         setIsError(true);
