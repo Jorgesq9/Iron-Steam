@@ -30,6 +30,7 @@ import axios from "axios";
         alert("User registerd Succesfully :)")
         setShowForm(false)
         fetchData()
+        window.location.reload();
       }catch(err){
         console.log("Error registering", err)
         alert("User registerd Fail :(")
