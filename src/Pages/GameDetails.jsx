@@ -68,24 +68,32 @@ export const GameDetailsPage = ({
       ) : (
         gameDetails && (
           <div className="game-card">
-            <h1 className="text">{gameDetails.gameName}</h1>
-            <img src={gameDetails.screenshots} alt="Game Screenshot" />
+            <div className="entire-card">
+              <div className="card-title">
+                <h1 className="text">{gameDetails.gameName}</h1>
+                <img src={gameDetails.screenshots} alt="Game Screenshot" />
+              </div>
 
-            <h3 className="text">{gameDetails.devName}</h3>
-            <p className="text">{gameDetails.description}</p>
-            <p className="text">{gameDetails.price}€</p>
-            {gameDetails.linkToGame && (
-              <p className="text">
-                <a href={gameDetails.linkToGame} target="_blank">
-                  Play the Demo
-                </a>
-              </p>
-            )}
+              <div className="card-body">
+                <h3 className="text">{gameDetails.devName}</h3>
+                <p className="text">{gameDetails.description}</p>
+                <p className="text">{gameDetails.price}€</p>
+                {gameDetails.linkToGame && (
+                  <p className="text">
+                    <a href={gameDetails.linkToGame} target="_blank">
+                      Play the Demo
+                    </a>
+                  </p>
+                )}
+              </div>
+            </div>
 
-            <button onClick={handleDelete}>Delete</button>
-            <button className="button" onClick={toggleModal}>
-              <h1>Edit game</h1>
-            </button>
+            <div className="buttons">
+              <button onClick={handleDelete}>Delete</button>
+              <button className="button" onClick={toggleModal}>
+                <p>Edit game</p>
+              </button>
+            </div>
           </div>
         )
       )}
