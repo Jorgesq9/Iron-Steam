@@ -24,6 +24,7 @@ export const GameDetailsPage = ({
       setIsLoading(true);
       try {
         const response = await axios.get(`${API_URL}/games/${id}`);
+        const response = await axios.get(`${API_URL}/games/${id}`);
         setGameDetails(response.data);
       } catch (err) {
         console.log(err);
@@ -40,6 +41,7 @@ export const GameDetailsPage = ({
       );
 
       if (confirmDelete) {
+        await axios.delete(`${API_URL}/games/${id}`);
         await axios.delete(`${API_URL}/games/${id}`);
         setGameDetails(null);
         toast.success("Game Deleted");
