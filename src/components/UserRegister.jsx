@@ -39,6 +39,8 @@ export const UserRegister = () => {
   const handleRegister = async (event) => {
     event.preventDefault();
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+
     if (
       !validator.isStrongPassword(password, {
         minLength: 8,
@@ -54,7 +56,11 @@ export const UserRegister = () => {
       return;
     }
 
-    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+    const newUser = {
+      username: userName,
+      password: password,
+    };
+
     try {
       const response = await axios.post(`${API_URL}/users`, newUser);
       console.log("userRegisterd", response.data);
