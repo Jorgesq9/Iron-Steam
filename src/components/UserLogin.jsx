@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 
+
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
+
     export const UserLogin = ({setUserIsLogin}) =>{
     
     const [userName, setUserName] = useState("")
@@ -69,9 +71,11 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
             autoComplete='current-password'
             onChange={(event) => setPassword(event.target.value)}
           />
-          <button type='submit'> 
-            login
+          <div>
+          <button className="loginButton" type='submit'> 
+            Login
           </button>
+          </div>
          
         </form>
         )}

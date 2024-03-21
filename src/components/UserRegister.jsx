@@ -25,7 +25,7 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
       }
       ;
       try {
-      const response = await axios.post("http://localhost:5001/users", newUser)
+      const response = await axios.post(`${API_URL}/users`, newUser)
         console.log("userRegisterd",response.data)
         alert("User registerd Succesfully :)")
         setShowForm(false)
@@ -67,9 +67,11 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
             autoComplete='current-password'
             onChange={(event) => setPassword(event.target.value)}
           />
-          <button type='submit'> 
+          <div>
+          <button className="registerButton" type='submit'> 
             Register
           </button>
+          </div>
          
         </form>
         )}

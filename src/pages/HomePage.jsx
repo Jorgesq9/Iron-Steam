@@ -51,7 +51,14 @@ export const HomePage = ({
   }
 
   return (
+
+    
     <div className="home-page">
+
+      <div className="loginPlace">
+        <UserRegister />
+        <UserLogin  setUserIsLogin={setUserIsLogin} />  
+        </div>
       <Searchbar search={search} setSearch={setSearch} />
 
       {userIsLogin && (
@@ -60,9 +67,11 @@ export const HomePage = ({
 
       
       {addButton}
-
-      <UserRegister />
-      <UserLogin setUserIsLogin={setUserIsLogin} />
+      
+      
+      
+      
+      
       {isLoading ? (
         <PacmanLoader
           className="loading"
