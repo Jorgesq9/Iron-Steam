@@ -19,6 +19,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: none;
 }
 
 .entire-card {
