@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./AddGameForm.css";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+
 export const AddGameForm = ({ isModalOpen, toggleModal }) => {
   const [inputValue, setInputValue] = useState({
     gameName: "",
@@ -24,12 +26,12 @@ export const AddGameForm = ({ isModalOpen, toggleModal }) => {
   const submitFormHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:5001/games");
+      const response = await axios.get(`${API_URL}/games`);
       const games = response.data;
       console.log(response.data)
       const highestId = games.reduce((max, game) => Math.max(max, game.id), 0);
 
-      const newGameResponse = await axios.post("http://localhost:5001/games", {
+      const newGameResponse = await axios.post(`${API_URL}/games`, {
         ...inputValue,
         id: highestId + 1,
       });
