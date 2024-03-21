@@ -5,13 +5,14 @@
 }
 
 img {
-  /* width: auto;
-  height: 500px; */
-  /* align-self: start; */
+  width: 300px;
+  height: 450px; 
 }
 
 .text {
-  align-self: start;
+  align-self: center;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .game-card {
@@ -25,13 +26,48 @@ img {
 }
 
 .card-title {
+  display: flex;
+  flex-direction: column;
+  
+}
+.texth1{
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  margin-left: 500px;
+  
 }
 
 .card-body {
   padding: 3em 1em 0em 1em;
+  margin-top: 150px;
+  width: 500px;
+
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.delete{
+  background-color: rgb(155, 0, 0);
+  color:white;
+  font-size: 19px;
+}
+@keyframes pulse {
+
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+  
+}
+
+.demo{
+  background-color: black;
+  animation: pulse 2s infinite;
+}
+.link {
+  text-decoration: none;
+  color: white;
 }

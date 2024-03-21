@@ -70,23 +70,23 @@ export const GameDetailsPage = ({
           <div className="game-card">
             <div className="entire-card">
               <div className="card-title">
-                <h1 className="text">{gameDetails.gameName}</h1>
+                <h1 className="texth1">{gameDetails.gameName}</h1>
+                <div className="imageDetails">
                 <img src={gameDetails.screenshots} alt="Game Screenshot" />
+              </div>
               </div>
 
               <div className="card-body">
-                <h3 className="text">{gameDetails.devName}</h3>
+                <h3 className="text">Developer by : {gameDetails.devName}</h3>
                 <p className="text">{gameDetails.description}</p>
-                <p className="text">{gameDetails.price}€</p>
-                {gameDetails.linkToGame && (
-                  <p className="text">
-                    <a href={gameDetails.linkToGame} target="_blank">
-                      Play the Demo
-                    </a>
-                  </p>
-                )}
+                <p className="text">Price: {gameDetails.price}€</p>
                 <div className="buttons">
-                  <button onClick={handleDelete}>Delete</button>
+                  <button className="delete" onClick={handleDelete}>Delete</button>
+                  {gameDetails.linkToGame && (
+                    <button className="demo"><a className="link" href={gameDetails.linkToGame} target="_blank">
+                      Play the Demo
+                    </a></button>
+                )}
                   <button className="button edit-button" onClick={toggleModal}>
                     <h4>Edit game</h4>
                   </button>
