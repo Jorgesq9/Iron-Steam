@@ -97,6 +97,15 @@ export const UserRegister = () => {
               validate(event.target.value);
             }}
           />
+          {validationMessage && (
+            <span
+              className={
+                IsPasswordStrong ? "strong-password-span" : "weak-password-span"
+              }
+            >
+              {validationMessage}
+            </span>
+          )}
           <div>
             <button className="registerButton" type="submit">
               Register
