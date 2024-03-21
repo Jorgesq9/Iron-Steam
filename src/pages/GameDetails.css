@@ -46,15 +46,19 @@ img {
 }
 
 .buttons {
+  margin-top: 100px;
   display: flex;
   justify-content: space-between;
 }
 
 .delete{
+  
   background-color: rgb(155, 0, 0);
   color:white;
   font-size: 19px;
 }
+
+
 @keyframes pulse {
 
   0% { transform: scale(1); }
@@ -64,6 +68,7 @@ img {
 }
 
 .demo{
+  
   background-color: black;
   animation: pulse 2s infinite;
 }
