@@ -6,7 +6,7 @@
 
 img {
   width: 300px;
-  height: 450px; 
+  height: 450px;
 }
 
 .text {
@@ -28,21 +28,17 @@ img {
 .card-title {
   display: flex;
   flex-direction: column;
-  
 }
-.texth1{
+
+.texth1 {
   text-align: center;
   font-size: 40px;
-  margin-bottom: 50px;
-  margin-left: 500px;
-  
+  padding: 1em;
 }
 
 .card-body {
   padding: 3em 1em 0em 1em;
-  margin-top: 150px;
   width: 500px;
-
 }
 
 .buttons {
@@ -51,27 +47,29 @@ img {
   justify-content: space-between;
 }
 
-.delete{
-  
+.delete {
   background-color: rgb(155, 0, 0);
-  color:white;
+  color: white;
   font-size: 19px;
 }
 
-
 @keyframes pulse {
-
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-  
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.demo{
-  
+.demo {
   background-color: black;
   animation: pulse 2s infinite;
 }
+
 .link {
   text-decoration: none;
   color: white;
