@@ -1,8 +1,34 @@
 .register {
     width: 200px;
+    display: flex;
+    
     
 }
 .login {
     width: 200px;
+    display: flex;
+    
+}
+
+.registerButton{
+    display: flex;
+    width: 200px;
+
+}
+.loginButton{
+    display: flex;
+    width: 200px;
+    justify-content: center;
+}
+
+.registerButton{
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+.loginPlace{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
     
 }

@@ -29,7 +29,7 @@ export const UserRegister = () => {
   };
 
   const fetchData = async () => {
-    const users = await axios.get("http://localhost:5001/users");
+    const users = await axios.get(`${API_URL}/users`);
   };
 
   const handleRegisterClick = () => {
@@ -54,13 +54,9 @@ export const UserRegister = () => {
       return;
     }
 
-    const newUser = {
-      username: userName,
-      password: password,
-    };
-
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
     try {
-      const response = await axios.post("http://localhost:5001/users", newUser);
+      const response = await axios.post(`${API_URL}/users`, newUser);
       console.log("userRegisterd", response.data);
       alert("User registerd Succesfully :)");
       setShowForm(false);
@@ -101,16 +97,11 @@ export const UserRegister = () => {
               validate(event.target.value);
             }}
           />
-          {validationMessage && (
-            <span
-              className={
-                IsPasswordStrong ? "strong-password-span" : "weak-password-span"
-              }
-            >
-              {validationMessage}
-            </span>
-          )}
-          <button type="submit">Register</button>
+          <div>
+            <button className="registerButton" type="submit">
+              Register
+            </button>
+          </div>
         </form>
       )}
     </div>
