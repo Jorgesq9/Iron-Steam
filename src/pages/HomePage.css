@@ -1,13 +1,13 @@
 .register {
     width: 200px;
     display: flex;
-    margin-left: 770px;
+    
     
 }
 .login {
     width: 200px;
     display: flex;
-    margin-right: 770px;
+    
 }
 
 .registerButton{
