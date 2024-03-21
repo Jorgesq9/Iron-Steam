@@ -92,6 +92,7 @@ export const UserRegister = () => {
             autoComplete="current-userName"
             onChange={(event) => setUserName(event.target.value)}
           />
+
           <input
             type="password"
             value={password}
@@ -103,6 +104,7 @@ export const UserRegister = () => {
               validate(event.target.value);
             }}
           />
+
           {validationMessage && (
             <span
               className={
