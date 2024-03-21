@@ -1,29 +1,22 @@
-import logo from "../assets/ironSteam.png";
-import { Link } from "react-router-dom";
-import { UserRegister } from "./UserRegister";
-import { UserLogin } from "./UserLogin";
+import logo from "../assets/ironSteam.png"
+import {Link} from "react-router-dom"
 
-export const Navbar = ({ setUserIsLogin }) => {
+export const Navbar = () => {
+
   const linkStyle = {
     color: "white",
-    textDecoration: "none",
-  };
+    textDecoration: "none"
+}
 
-  return (
-    <div className="nav-Bar">
-      <div className="logo-container">
-        <Link to="/" style={linkStyle}>
-          <div>Home</div>
-        </Link>
-        <img src={logo} alt="logo" className="mainLogo" />
-        <Link to="about" style={linkStyle}>
-          <div>About</div>
-        </Link>
-      </div>
-      <div className="loginPlace">
-        <UserRegister />
-        <UserLogin setUserIsLogin={setUserIsLogin} />
+  return(
+  
+  
+  <div className="nav-Bar">
+    <div className="logo-container">
+     <Link to="/" style={linkStyle}><div>Home</div></Link>
+     <img src={logo} alt="logo" className="mainLogo"/>
+     <Link to="about" style={linkStyle}><div>About</div></Link>
       </div>
     </div>
-  );
+  )
 };

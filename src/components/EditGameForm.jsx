@@ -55,6 +55,7 @@ export const EditGameForm = ({ isModalOpen, toggleModal }) => {
         }
       );
       toggleModal();
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
