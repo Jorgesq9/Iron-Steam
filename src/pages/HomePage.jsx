@@ -59,6 +59,7 @@ export const HomePage = ({
         <UserRegister />
         <UserLogin  setUserIsLogin={setUserIsLogin} />  
         </div>
+        
       <Searchbar search={search} setSearch={setSearch} />
 
       {userIsLogin && (
