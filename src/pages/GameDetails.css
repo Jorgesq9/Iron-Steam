@@ -28,6 +28,10 @@ img {
 }
 
 .card-body {
-  padding-top: 3em;
-  padding-left: 1em;
+  padding: 3em 1em 0em 1em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }

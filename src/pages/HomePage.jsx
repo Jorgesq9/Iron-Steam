@@ -2,10 +2,10 @@ import { AddGameForm } from "../components/AddGameForm";
 import { GameList } from "../components/GameList";
 import { useEffect, useState } from "react";
 import { Searchbar } from "../components/Searchbar";
-import { UserRegister} from "../components/UserRegister"
-import { UserLogin} from "../components/UserLogin"
+import { UserRegister } from "../components/UserRegister";
+import { UserLogin } from "../components/UserLogin";
 import axios from "axios";
-import "./HomePage.css"
+import "./HomePage.css";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 export const HomePage = ({
@@ -18,7 +18,7 @@ export const HomePage = ({
 }) => {
   const [cards, setCards] = useState([]);
   const [search, setSearch] = useState("");
-  const [userIsLogin, setUserIsLogin] = useState(false)
+  const [userIsLogin, setUserIsLogin] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -42,11 +42,12 @@ export const HomePage = ({
 
   let addButton = null;
 
-  if(userIsLogin) {
-    addButton = ( <button className="button modal-button" onClick={toggleModal}>
-    <h1>Add Game</h1>
-  </button>
-)
+  if (userIsLogin) {
+    addButton = (
+      <button className="button modal-button" onClick={toggleModal}>
+        <h1>Add Game</h1>
+      </button>
+    );
   }
 
   return (
@@ -54,10 +55,13 @@ export const HomePage = ({
       <Searchbar search={search} setSearch={setSearch} />
 
       {userIsLogin && (
-      <AddGameForm toggleModal={toggleModal} isModalOpen={isModalOpen} userIsLogin={userIsLogin}  /> 
+        <AddGameForm
+          toggleModal={toggleModal}
+          isModalOpen={isModalOpen}
+          userIsLogin={userIsLogin}
+        />
       )}
 
-      
       {addButton}
 
       <UserRegister />

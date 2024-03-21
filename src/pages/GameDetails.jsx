@@ -85,14 +85,13 @@ export const GameDetailsPage = ({
                     </a>
                   </p>
                 )}
+                <div className="buttons">
+                  <button onClick={handleDelete}>Delete</button>
+                  <button className="button edit-button" onClick={toggleModal}>
+                    <h4>Edit game</h4>
+                  </button>
+                </div>
               </div>
-            </div>
-
-            <div className="buttons">
-              <button onClick={handleDelete}>Delete</button>
-              <button className="button" onClick={toggleModal}>
-                <p>Edit game</p>
-              </button>
             </div>
           </div>
         )
