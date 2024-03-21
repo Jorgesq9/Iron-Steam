@@ -10,6 +10,10 @@ body {
   color: #e0e0e0;
   background-image: url("./assets/Posible-Background.jpg");
   line-height: 1.6;
+  transform: scale(0.8);
+  transform-origin: top;
+  margin-bottom: -25%;
+  
 }
 
 .nav-Bar {
@@ -19,7 +23,7 @@ body {
 }
 .mainLogo {
   width: auto;
-  height: 250px;
+  height: 350px;
 }
 
 .footer-txt {
@@ -49,13 +53,14 @@ body {
 }
 .header,
 .footer {
-  margin-top: 500px;
+  margin-top: 400px;
   margin-left: 75px;
   display: flex;
   justify-content: center;
   color: #ffffff;
   padding: 20px 0;
   text-align: center;
+
 }
 
 .button {
