@@ -7,24 +7,24 @@ export const UserRegister = () => {
   const [password, setPassword] = useState("");
   const [showForm, setShowForm] = useState("");
   const [validationMessage, setValidationMessage] = useState("");
+  const [IsPasswordStrong, setIsPasswordStrong] = useState(false);
 
   const validate = (value) => {
+    const isStrong = validator.isStrongPassword(value, {
+      minLength: 8,
+      minLowercase: 1,
+      minUppercase: 1,
+      minNumbers: 1,
+      minSymbols: 1,
+    });
+    setIsPasswordStrong(isStrong);
+
     if (value === "") {
-      validationMessage("");
-    } else if (
-      validator.isStrongPassword(value, {
-        minLength: 8,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1,
-        minSymbols: 1,
-      })
-    ) {
-      setValidationMessage("is a strong password");
+      setValidationMessage("");
+    } else if (isStrong) {
+      setValidationMessage("Strong password!");
     } else {
-      setValidationMessage(
-        "Min 8 characters, small and large, a number and a symbol"
-      );
+      setValidationMessage("Password is too weak");
     }
   };
 
@@ -38,6 +38,21 @@ export const UserRegister = () => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
+
+    if (
+      !validator.isStrongPassword(password, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+    ) {
+      alert(
+        "Password does not meet strength requirements! Min 8 characters, including small and large letters, a number, and a symbol."
+      );
+      return;
+    }
 
     const newUser = {
       username: userName,
@@ -87,7 +102,13 @@ export const UserRegister = () => {
             }}
           />
           {validationMessage && (
-            <span className="weak-password-span">{validationMessage}</span>
+            <span
+              className={
+                IsPasswordStrong ? "strong-password-span" : "weak-password-span"
+              }
+            >
+              {validationMessage}
+            </span>
           )}
           <button type="submit">Register</button>
         </form>
