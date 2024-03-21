@@ -7,22 +7,24 @@ export const UserRegister = () => {
   const [password, setPassword] = useState("");
   const [showForm, setShowForm] = useState("");
   const [validationMessage, setValidationMessage] = useState("");
+  const [IsPasswordStrong, setIsPasswordStrong] = useState(false);
 
   const validate = (value) => {
+    const isStrong = validator.isStrongPassword(value, {
+      minLength: 8,
+      minLowercase: 1,
+      minUppercase: 1,
+      minNumbers: 1,
+      minSymbols: 1,
+    });
+    setIsPasswordStrong(isStrong);
+
     if (value === "") {
-      validationMessage("");
-    } else if (
-      validator.isStrongPassword(value, {
-        minLength: 8,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1,
-        minSymbols: 1,
-      })
-    ) {
-      setValidationMessage("is a strong password");
+      setValidationMessage("");
+    } else if (isStrong) {
+      setValidationMessage("Strong password!");
     } else {
-      setValidationMessage("is not a strong password");
+      setValidationMessage("Password is too weak");
     }
   };
 
@@ -36,6 +38,21 @@ export const UserRegister = () => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
+
+    if (
+      !validator.isStrongPassword(password, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+    ) {
+      alert(
+        "Password does not meet strength requirements! Min 8 characters, including small and large letters, a number, and a symbol."
+      );
+      return;
+    }
 
     const newUser = {
       username: userName,
@@ -69,7 +86,7 @@ export const UserRegister = () => {
             type="text"
             value={userName}
             name="UserName"
-            placeholder="UserName"
+            placeholder="Username"
             autoComplete="current-userName"
             onChange={(event) => setUserName(event.target.value)}
           />
@@ -79,8 +96,20 @@ export const UserRegister = () => {
             name="Password"
             placeholder="Password"
             autoComplete="current-password"
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(event) => {
+              setPassword(event.target.value);
+              validate(event.target.value);
+            }}
           />
+          {validationMessage && (
+            <span
+              className={
+                IsPasswordStrong ? "strong-password-span" : "weak-password-span"
+              }
+            >
+              {validationMessage}
+            </span>
+          )}
           <button type="submit">Register</button>
         </form>
       )}
