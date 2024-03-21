@@ -14,6 +14,7 @@ export const GameDetailsPage = ({
   isLoading,
   setIsLoading,
   isError,
+  userIsLogin,
 }) => {
   const { id } = useParams();
 

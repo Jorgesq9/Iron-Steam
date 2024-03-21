@@ -1,0 +1,26 @@
+.not-found-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.not-found-title {
+  color: #d32f2f;
+  margin-bottom: 20px;
+}
+
+.not-found-text {
+  color: #e4e4e4;
+  margin-bottom: 15px;
+}
+
+.not-found-link {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.not-found-image {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+}

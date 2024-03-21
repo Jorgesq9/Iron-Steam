@@ -45,6 +45,7 @@ function App() {
               isLoading={isLoading}
               setIsError={setIsError}
               isError={isError}
+              userIsLogin={userIsLogin}
             />
           }
         />
