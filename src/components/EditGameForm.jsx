@@ -3,6 +3,7 @@ import "./EditGameForm.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 export const EditGameForm = ({ isModalOpen, toggleModal }) => {
   const { id } = useParams();
 
@@ -18,7 +19,7 @@ export const EditGameForm = ({ isModalOpen, toggleModal }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/games/${id}`);
+        const response = await axios.get(`${API_URL}/games/${id}`);
 
         setInputValue({
           gameName: response.data.gameName || "",
@@ -48,7 +49,7 @@ export const EditGameForm = ({ isModalOpen, toggleModal }) => {
 
     try {
       const newGameResponse = await axios.patch(
-        `http://localhost:5001/games/${id}`,
+        `${API_URL}/games/${id}`,
         {
           ...inputValue,
         }
