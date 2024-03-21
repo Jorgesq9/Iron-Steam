@@ -45,8 +45,9 @@
   position: relative;
   top: -40px;
   content: icon;
-  width: 600px;
+  width: 500px;
   height: auto;
+  
 }
 
 .h2article {
@@ -61,7 +62,7 @@
   justify-content: center;
   font-size: 25px;
   width: 500px;
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 .article3 {

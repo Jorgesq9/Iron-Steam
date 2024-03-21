@@ -7,6 +7,7 @@ import { UserLogin} from "../components/UserLogin"
 import axios from "axios";
 import "./HomePage.css"
 import PacmanLoader from "react-spinners/PacmanLoader";
+import { NotFoundPage } from "./NotFoundPage";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
@@ -93,6 +94,7 @@ export const HomePage = ({
             isError={isError}
             setIsError={setIsError}
           />
+          
         )}
       </div>
     );

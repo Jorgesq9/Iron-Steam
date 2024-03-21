@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PacmanLoader from "react-spinners/PacmanLoader";
+import { NotFoundPage } from "./NotFoundPage";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
 export const GameDetailsPage = ({
@@ -54,6 +55,7 @@ export const GameDetailsPage = ({
 
   return (
     <div className="game-details-page">
+      
       {isLoading ? (
         <PacmanLoader
           className="loading"
