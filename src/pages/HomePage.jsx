@@ -25,6 +25,7 @@ export const HomePage = ({
     const getData = async () => {
       setIsLoading(true);
       try {
+        // await new Promise((resolve) => setTimeout(resolve, 2000));
         const response = await axios.get(`${API_URL}/games`);
         setCards(response.data);
       } catch (err) {
