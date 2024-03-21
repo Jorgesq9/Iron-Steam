@@ -2,13 +2,12 @@ import { AddGameForm } from "../components/AddGameForm";
 import { GameList } from "../components/GameList";
 import { useEffect, useState } from "react";
 import { Searchbar } from "../components/Searchbar";
-import { UserRegister } from "../components/UserRegister";
-import { UserLogin } from "../components/UserLogin";
+
 import axios from "axios";
 import "./HomePage.css";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001"
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 export const HomePage = ({
   toggleModal,
   isModalOpen,
@@ -16,10 +15,11 @@ export const HomePage = ({
   isLoading,
   isError,
   setIsError,
+  userIsLogin,
+  setUserIsLogin,
 }) => {
   const [cards, setCards] = useState([]);
   const [search, setSearch] = useState("");
-  const [userIsLogin, setUserIsLogin] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -52,15 +52,7 @@ export const HomePage = ({
   }
 
   return (
-
-    
     <div className="home-page">
-
-      <div className="loginPlace">
-        <UserRegister />
-        <UserLogin  setUserIsLogin={setUserIsLogin} />  
-        </div>
-        
       <Searchbar search={search} setSearch={setSearch} />
 
       {userIsLogin && (
@@ -72,11 +64,7 @@ export const HomePage = ({
       )}
 
       {addButton}
-      
-      
-      
-      
-      
+
       {isLoading ? (
         <PacmanLoader
           className="loading"
@@ -89,7 +77,7 @@ export const HomePage = ({
       ) : isError ? (
         <div className="error-message">
           <h2>There was an error fetching the data from the backend...</h2>
-          <p>Pretty wack amirite?</p>
+          <p>Pretty cringe if you ask me...</p>
         </div>
       ) : (
         <GameList
