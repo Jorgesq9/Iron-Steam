@@ -141,3 +141,9 @@ p {
 .error-message {
   align-self: center;
 }
+
+.weak-password-span {
+  font-weight: bold;
+  color: red;
+  font-size: 10px;
+}

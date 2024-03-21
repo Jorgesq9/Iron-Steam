@@ -22,7 +22,9 @@ export const UserRegister = () => {
     ) {
       setValidationMessage("is a strong password");
     } else {
-      setValidationMessage("is not a strong password");
+      setValidationMessage(
+        "Min 8 characters, small and large, a number and a symbol"
+      );
     }
   };
 
@@ -69,7 +71,7 @@ export const UserRegister = () => {
             type="text"
             value={userName}
             name="UserName"
-            placeholder="UserName"
+            placeholder="Username"
             autoComplete="current-userName"
             onChange={(event) => setUserName(event.target.value)}
           />
@@ -79,8 +81,14 @@ export const UserRegister = () => {
             name="Password"
             placeholder="Password"
             autoComplete="current-password"
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(event) => {
+              setPassword(event.target.value);
+              validate(event.target.value);
+            }}
           />
+          {validationMessage && (
+            <span className="weak-password-span">{validationMessage}</span>
+          )}
           <button type="submit">Register</button>
         </form>
       )}
