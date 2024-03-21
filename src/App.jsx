@@ -12,12 +12,13 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [userIsLogin, setUserIsLogin] = useState(false);
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
     <>
-      <Navbar />
+      <Navbar userIsLogin={userIsLogin} setUserIsLogin={setUserIsLogin} />
 
       <Routes>
         <Route
