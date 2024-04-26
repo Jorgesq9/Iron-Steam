@@ -4,6 +4,8 @@
 
 Welcome to **IronSteam**, the premier platform for showcasing and distributing JavaScript games created by our talented cohort. IronSteam allows developers to register, login, and publish their games, providing a dedicated space for their creations to be enjoyed by players worldwide.
 
+![Game Screenshot 1](src/assets/ironSteamScreenshot1.png)
+
 ## Features
 
 - **User Registration and Login:** Secure sign-up and authentication system for game developers.
